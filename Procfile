@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b 0.0.0.0:8000 chatbotPMVC2:app
+web: gunicorn master:app
