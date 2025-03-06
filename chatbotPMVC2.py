@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, jsonify
 import json
 from difflib import get_close_matches
 
-app = Flask(__name__,template_folder='templates')
+from flask import Flask, render_template, request, jsonify
+
+
+app = Flask(__name__)
 
 # โหลดฐานข้อมูล
 def load_knowledge_base():
@@ -61,4 +63,4 @@ def teach():
     return jsonify({'status': 'success', 'message': 'ขอบคุณครับที่สอนคำใหม่ให้กับผม.'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
